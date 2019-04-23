@@ -13,5 +13,5 @@ dependencies:
       debian: "{{ xqueue_debian_pkgs }}"
       redhat: []
   - role: hermes
-  hermes_service_config: "{{ XQUEUE_HERMES_SERVICE_CONFIG }}"
-  when: XQUEUE_ENABLE_HERMES
+    hermes_service_config: "{{ XQUEUE_HERMES_SERVICE_CONFIG }}"
+    when: XQUEUE_ENABLE_HERMES

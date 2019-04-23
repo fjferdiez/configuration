@@ -13,4 +13,3 @@ dependencies:
     edx_service_packages:
       debian: "{{ edx_django_service_debian_pkgs }}"
       redhat: []
-  - role: hermes
