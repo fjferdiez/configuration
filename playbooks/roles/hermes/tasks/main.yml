@@ -90,7 +90,7 @@
     src: "templates/hermes.sh.j2"
     dest: "{{ hermes_app_dir }}/{{ hermes_service_name }}.sh"
     mode: 0650
-    owner: "{{ common_web_user }}"
+    owner: "{{ supervisor_user }}"
     group: "{{ common_web_user }}"
   tags:
     - install
