@@ -230,8 +230,11 @@ ECOMMERCE_SESSION_COOKIE_SECURE: true
 ECOMMERCE_AUTOMATED_USERS: {}
 
 ECOMMERCE_ENABLE_HERMES: "{{ COMMON_ENABLE_HERMES }}"
-ECOMMERCE_HERMES_SERVICE_CONFIG: []
-
+ECOMMERCE_HERMES_SERVICE_CONFIG: [
+  - url: 's3://bucket/ecommerce.yml'
+    filename: '/edx/etc/ecommerce.yml.new'
+    command:  'sudo mv /edx/etc/ecommerce.yml.new /edx/etc/ecommerce.yml'
+]
 
 #
 # vars are namespace with the module name.
