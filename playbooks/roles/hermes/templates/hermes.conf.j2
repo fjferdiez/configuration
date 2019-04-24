@@ -2,7 +2,7 @@
 
 command={{ hermes_app_dir }}/{{ hermes_service_name }}.sh -i {{ hermes_interval }} -y {{ hermes_manifest_yaml_file_path }}
 
-user={{ common_web_user }}
+user={{ hermes_user }}
 directory={{ hermes_code_dir }}
 stdout_logfile={{ supervisor_log_dir }}/%(program_name)s-stdout.log
 stderr_logfile={{ supervisor_log_dir }}/%(program_name)s-stderr.log

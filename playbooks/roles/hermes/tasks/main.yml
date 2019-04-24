@@ -111,8 +111,8 @@
   template:
     src: "templates/hermes_env.j2"
     dest: "{{ hermes_app_dir }}/{{ hermes_service_name }}_env"
-    owner: "{{ common_web_user }}"
-    group: "{{ common_web_user }}"
+    owner: "{{ hermes_user }}"
+    group: "{{ hermes_user }}"
     mode: 0644
   tags:
     - install
