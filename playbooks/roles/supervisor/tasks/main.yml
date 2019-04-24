@@ -82,7 +82,7 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: "{{ supervisor_service_user }}"
+    owner: "{{ supervisor_user }}"
     group: "{{ supervisor_user }}"
   with_items:
     - "{{ supervisor_data_dir }}"
@@ -191,7 +191,7 @@
   template:
     src: "edx/bin/supervisorctl.j2"
     dest: "{{ COMMON_BIN_DIR }}/supervisorctl"
-    owner: "{{ supervisor_service_user }}"
+    owner: "{{ supervisor_user }}"
     mode: "0755"
   when: supervisor_service == "supervisor"
   tags:
