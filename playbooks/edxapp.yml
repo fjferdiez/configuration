@@ -32,4 +32,7 @@
      when: COMMON_ENABLE_MINOS
    - role: datadog-uninstall
      when: not COMMON_ENABLE_DATADOG
+   - role: hermes
+     hermes_service_config: "{{ EDXAPP_HERMES_SERVICE_CONFIG }}"
+     when: EDXAPP_ENABLE_HERMES
 

@@ -22,3 +22,6 @@
       when: COMMON_ENABLE_NEWRELIC_INFRASTRUCTURE
     - role: datadog-uninstall
       when: not COMMON_ENABLE_DATADOG
+    - role: hermes
+      hermes_service_config: "{{ JOURNALS_HERMES_SERVICE_CONFIG }}"
+      when: JOURNALS_ENABLE_HERMES

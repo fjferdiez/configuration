@@ -16,4 +16,7 @@
       when: COMMON_ENABLE_NEWRELIC_INFRASTRUCTURE
     - role: datadog-uninstall
       when: not COMMON_ENABLE_DATADOG
+    - role: hermes
+      hermes_service_config: "{{ ECOMMERCE_WORKER_HERMES_SERVICE_CONFIG }}"
+      when: ECOMMERCE_WORKER_ENABLE_HERMES
 
