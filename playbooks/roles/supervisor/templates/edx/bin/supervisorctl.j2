@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -u {{ supervisor_user }} {{ supervisor_ctl }} -c {{ supervisor_cfg }} $*
+sudo -u {{ supervisor_runtime_user }} {{ supervisor_ctl }} -c {{ supervisor_cfg }} $*

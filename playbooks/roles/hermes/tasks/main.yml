@@ -100,7 +100,7 @@
   template:
     src: "templates/hermes.conf.j2"
     dest: "{{ supervisor_available_dir }}/{{ hermes_service_name }}.conf"
-    owner: "{{ common_web_user }}"
+    owner: "{{ supervisor_user }}"
     group: "{{ common_web_user }}"
     mode: 0644
   tags:
