@@ -41,6 +41,7 @@
   tags:
     - install
     - install:system-requirements
+    - configure:remote-config
 
 - name: install python3.6
   apt:
@@ -52,6 +53,7 @@
   tags:
     - install
     - install:system-requirements
+    - configure:remote-config
 
 - name: build virtualenv with python3
   command: "virtualenv --python=/usr/bin/python3.6 {{ hermes_venv_dir }}"
@@ -61,6 +63,7 @@
   tags:
     - install
     - install:system-requirements
+    - configure:remote-config
 
 - name: git checkout hermes repo into {{ hermes_code_dir }}
   git:
@@ -74,6 +77,7 @@
   tags:
     - install
     - install:code
+    - configure:remote-config
 
 - name: run make requirements
   command: make requirements
@@ -84,6 +88,7 @@
   tags:
     - install
     - install:app-requirements
+    - configure:remote-config
 
 - name: write out the supervisor wrapper
   template:
@@ -95,6 +100,7 @@
   tags:
     - install
     - install:configuration
+    - configure:remote-config
 
 - name: write supervisord config
   template:
@@ -106,6 +112,7 @@
   tags:
     - install
     - install:configuration
+    - configure:remote-config
 
 - name: setup the app env file
   template:
@@ -117,6 +124,7 @@
   tags:
     - install
     - install:configuration
+    - configure:remote-config
 
 - name: enable supervisor script
   file:
@@ -128,6 +136,7 @@
   tags:
     - install
     - install:configuration
+    - configure:remote-config
 
 - name: update supervisor configuration
   command: "{{ supervisor_ctl }} -c {{ supervisor_cfg }} update"
@@ -135,6 +144,7 @@
   tags:
     - manage
     - manage:start
+    - configure:remote-config
 
 - name: create symlinks from the venv bin dir
   file:
@@ -147,3 +157,4 @@
   tags:
     - install
     - install:app-requirements
+    - configure:remote-config
