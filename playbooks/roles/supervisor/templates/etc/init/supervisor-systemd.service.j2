@@ -22,7 +22,7 @@ ExecStartPre={{ supervisor_venv_dir }}/bin/python {{ supervisor_app_dir }}/pre_s
 # This is needed because pre_supervisor needs to write to supervisor/conf.d, which
 # supervisor_service_user does not have permission to do.
 PermissionsStartOnly=true
-User={{ supervisor_runtime_user }}
+User={{ supervisor_user }}
 
 Type=forking
 TimeoutSec=432000
