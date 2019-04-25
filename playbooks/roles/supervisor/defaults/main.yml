@@ -31,7 +31,7 @@ supervisor_ctl: "{{ supervisor_venv_bin }}/supervisorctl"
 # Services should not be run as the root user, so you need to specify
 # user= for each service. We verify that is the case in pre_supervisor_checks.py
 
-supervisor_user: root
+supervisor_user: supervisor
 supervisor_log_dir: "{{ COMMON_LOG_DIR }}/supervisor"
 supervisor_cfg: "{{ supervisor_app_dir }}/supervisord.conf"
 # upstart service name and user

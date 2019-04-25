@@ -15,7 +15,7 @@
 # vars are namespaced with the module name.
 #
 
-hermes_user: hermes
+hermes_user: {{ common_web_user }}
 hermes_role_name: hermes
 hermes_service_name: hermes
 hermes_source_repo: https://github.com/edx/hermes.git
